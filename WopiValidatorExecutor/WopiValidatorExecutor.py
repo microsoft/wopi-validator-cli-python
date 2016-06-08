@@ -7,8 +7,10 @@ from xml.etree import ElementTree
 
 from .constants import *
 
+
 def GetIndentedJsonDump(inputJson):
     return json.dumps(inputJson, sort_keys=True, indent=4, separators=(',', ': '))
+
 
 def GetWopiTestEndpoint(wopiDiscoveryServiceUrl):
     logging.info("WOPI Discovery Service Url: " + wopiDiscoveryServiceUrl)
@@ -23,13 +25,15 @@ def GetWopiTestEndpoint(wopiDiscoveryServiceUrl):
 
     try:
         discoveryXml = ElementTree.fromstring(discoveryServiceResponse.content)
-        wopiTestEndPointUrl = discoveryXml.find(WOPITESTAPPLICATION_NODE_PATH).attrib[WOPITESTAPPLICATION_URLSRC_ATTRIBUTE]
+        wopiTestEndPointUrl = discoveryXml.find(WOPITESTAPPLICATION_NODE_PATH).attrib[
+            WOPITESTAPPLICATION_URLSRC_ATTRIBUTE]
     except Exception as exception:
-         print(Fore.RED + "Failed to parse WOPI Discovery Service XML: Check Logs for more information")
-         logging.critical("Failed to parse WOPI Discovery Service XML - Exception Details:", exception)
-         sys.exit(1)
+        print(Fore.RED + "Failed to parse WOPI Discovery Service XML: Check Logs for more information")
+        logging.critical("Failed to parse WOPI Discovery Service XML - Exception Details:", exception)
+        sys.exit(1)
 
     return wopiTestEndPointUrl[:wopiTestEndPointUrl.find('?')]
+
 
 def ExecuteWopiValidator(wopiDiscoveryServiceUrl, payload):
     # Initialize colorama to allow applying colors to the output text.
@@ -51,11 +55,11 @@ def ExecuteWopiValidator(wopiDiscoveryServiceUrl, payload):
         sys.exit(1)
 
     testurls = testUrlResponse.json()
-    logging.info("TestUrls to be Executed : \n" + GetIndentedJsonDump(testurls))
+    logging.info("TestUrls to be Executed : \n" + get_indented_json_dump(testurls))
 
     # Execute tests.
     for testurl in testurls:
-        testResultResponse=requests.get(testurl)
+        testResultResponse = requests.get(testurl)
         try:
             testResultResponse.raise_for_status()
         except requests.exceptions.HTTPError as exception:
@@ -66,7 +70,7 @@ def ExecuteWopiValidator(wopiDiscoveryServiceUrl, payload):
         # Log the json response for the test being executed.
         testResult = testResultResponse.json();
         logging.info("Result for TestUrl:" + testurl + '\n')
-        logging.info(GetIndentedJsonDump(testResult))
+        logging.info(get_indented_json_dump(testResult))
 
         # Print the test result and failure reasons if any.
         testCase = testResult[TEST_NAME]
