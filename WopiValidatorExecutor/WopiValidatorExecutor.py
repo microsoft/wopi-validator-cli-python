@@ -3,8 +3,9 @@ import logging
 import requests
 import sys
 from colorama import init, Fore, Back, Style
-from WopiValidatorExecutor.constants import *
 from xml.etree import ElementTree
+
+from .constants import *
 
 def GetIndentedJsonDump(inputJson):
     return json.dumps(inputJson, sort_keys=True, indent=4, separators=(',', ': '))
