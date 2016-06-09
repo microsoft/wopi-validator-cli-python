@@ -1,5 +1,4 @@
-import setuptools
-from distutils.core import setup
+from setuptools import setup
 
 setup(name = 'WopiValidatorExecutor',
       version = '0.1.0',

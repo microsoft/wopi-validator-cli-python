@@ -2,7 +2,8 @@ import argparse
 import configparser
 import logging
 from pkg_resources import resource_filename
-from WopiValidatorExecutor.constants import *
+
+from .constants import *
 
 # Entry Point of the Application.
 def main():
@@ -33,5 +34,5 @@ def main():
                'access_token_ttl': '0'}
 
     # Execute the WopiValidator.
-    from WopiValidatorExecutor.WopiValidatorExecutor import ExecuteWopiValidator
+    from .WopiValidatorExecutor import ExecuteWopiValidator
     ExecuteWopiValidator(args.s, payload)
