@@ -1,3 +1,6 @@
+# coding=utf-8
+
+
 # Logging constants
 EXECUTOR_DATEFORMAT = '%m/%d/%Y %I:%M:%S %p'
 EXECUTOR_LOGFILE_NAME = 'wopivalidatorexecutor.log'
