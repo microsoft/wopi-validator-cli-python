@@ -1,7 +1,7 @@
 WopiValidatorExecutor
 =====================
 
-WopiValidatorExecutor is a command line application which executes the WopiValidator tests to verify the host’s WOPI Implementation.
+WopiValidatorExecutor is a command line application which executes the WopiValidator tests to verify the hostâ€™s WOPI Implementation.
 
 For more details, please refer the documentation at [Wopi Validator Application](http://wopi.readthedocs.io/projects/officewopi/en/latest/testing/validator.html)
 
@@ -57,3 +57,9 @@ Logs
 ----
 
 A log file named `wopivalidatorexecutor.log` will be placed in the installation directory.
+
+Code of Conduct
+---------------
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). 
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
