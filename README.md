@@ -15,7 +15,7 @@ Ensure that you have Python Version >= `2.7` installed.
 * [Python Version 2.7](http://docs.python-guide.org/en/latest/starting/installation/)
 * [Python Version 3](https://docs.python.org/3/using/windows.html#installing-python)
 
-If you have Python 2 >= `2.7.9` or Python 3 >= `3.4` installed from python.org, you will already have `pip` and `setuptools`, but will need to upgrade to the latest version using the instructions below, (more details at - <https://python-packaging-user-guide.readthedocs.io/en/latest/installing/#install-pip-setuptools-and-wheel>)
+If you have Python 2 >= `2.7.9` or Python 3 >= `3.4` installed from python.org, you will already have `pip` and `setuptools`, but will need to upgrade to the latest version using the instructions below, (more details at - <https://python-packaging-user-guide.readthedocs.io/installing/#install-pip-setuptools-and-wheel>)
 
 **On Linux or OS X**
 
