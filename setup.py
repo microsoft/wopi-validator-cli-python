@@ -9,7 +9,7 @@ setup(name='WopiValidatorExecutor',
       install_requires=[
           'colorama==0.3.7',
           'configparser==3.5.0',
-          'requests==2.10.0'
+          'requests==2.20.0'
       ],
       packages=['WopiValidatorExecutor'],
       package_data={
